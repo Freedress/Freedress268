@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🤩60分鐘深層經絡煥活SPA</title>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1626341595154437');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1626341595154437&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel Code -->
+
 <style>
 body {
   margin: 0;
@@ -13,14 +34,12 @@ body {
   color: #333;
 }
 
-/* 容器 */
 .container {
   padding: 20px;
   max-width: 500px;
   margin: auto;
 }
 
-/* 卡片 */
 .card {
   background: #ffffff;
   border-radius: 20px;
@@ -51,48 +70,30 @@ body {
   font-weight: bold;
 }
 
-/* 按鈕 */
 .button {
   display: block;
   width: 100%;
   padding: 15px;
   border-radius: 14px;
-  border: none;
   background: #25D366;
   color: white;
   font-size: 16px;
   font-weight: bold;
   margin-top: 15px;
   cursor: pointer;
-}
-
-/* 移除所有 a 的藍線 */
-a {
+  text-align: center;
   text-decoration: none;
-  color: inherit;
-}
-a img {
-  border: none;
-  display: block;
 }
 
-/* 圖片 */
 img {
   width: 100%;
   display: block;
   margin: 0;
-  border-radius: 0;
 }
 
-/* 圓角 */
 .top-rounded {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-}
-.bottom-rounded {
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin-bottom: 20px;
 }
 </style>
 
@@ -102,56 +103,62 @@ img {
 
 <div class="container">
 
-  <!-- 頂部圖片 -->
-  <img src="banner.jpg" class="top-rounded">
-  <img src="banner1.jpg">
-  <img src="banner2.jpg">
-  <img src="banner3.jpg">
+  <!-- 图片 -->
+  <img src="banner.jpg" class="top-rounded" loading="lazy">
+  <img src="banner1.jpg" loading="lazy">
+  <img src="banner2.jpg" loading="lazy">
+  <img src="banner3.jpg" loading="lazy">
 
-  <!-- 卡片 -->
+  <!-- 内容 -->
   <div class="card">
     <div class="title">🤩60分鐘深層經絡煥活SPA</div>
     <p>🌿 前45分鐘｜深層經絡疏通</p>
-    <p>逐條經絡打開，將積咗十年嘅疲勞物質釋放返出嚟</p> 
-    
+    <p>釋放長期疲勞與壓力</p>
+
     <div class="title">🌙 後15分鐘｜溫和刮痧淨化</div>
-    <p>精準刮拭，帶走深層廢物，還原身體應有嘅輕盈</p>
+    <p>帶走深層廢物，恢復輕盈狀態</p>
   </div>
 
   <div class="card">
     <div class="title">🔥 限時優惠</div>
-    <p class="price-old">原價$688</p>
+    <p class="price-old">原價 $688</p>
     <p class="price-new">$268</p>
     <p class="highlight">📍荔枝角・鑽石山・北角</p>
 
-    <div class="title">🔥🔥即刻開始身體放鬆之旅</div>
+    <div class="title">👉 立即預約，鎖定限時優惠</div>
 
-    <!-- WhatsApp 按鈕（原位置） -->
-    <a href="https://wa.me/85251675936" target="_blank" rel="noopener noreferrer" id="whatsappBtn">
-      <button class="button">📱 立即領取優惠(WhatsApp)</button>
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/85251675936"
+       id="whatsappBtn"
+       class="button"
+       target="_blank"
+       rel="noopener noreferrer">
+      📱 立即領取優惠 (WhatsApp)
     </a>
   </div>
 
 </div>
 
+<!-- 转化追踪 JS -->
 <script>
-console.log("✅ 页面已加载完成");
+document.addEventListener("DOMContentLoaded", function () {
 
-document.querySelectorAll("img").forEach((img, index) => {
-  img.addEventListener("load", () => {
-    console.log(`🖼️ 图片${index + 1}加载成功: ${img.src}`);
-  });
-  img.addEventListener("error", () => {
-    console.error(`❌ 图片${index + 1}加载失败: ${img.src}`);
-  });
+  const btn = document.getElementById("whatsappBtn");
+
+  if (btn) {
+    btn.addEventListener("click", function () {
+
+      console.log("📲 WhatsApp click");
+
+      if (window.fbq) {
+        fbq('track', 'Contact');
+        fbq('track', 'Lead');
+      }
+
+    });
+  }
+
 });
-
-const btn = document.getElementById("whatsappBtn");
-if (btn) {
-  btn.addEventListener("click", () => {
-    console.log("📲 用户点击了 WhatsApp 按钮");
-  });
-}
 </script>
 
 </body>
